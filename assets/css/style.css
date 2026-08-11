@@ -24,12 +24,18 @@
 
 html { scroll-behavior: smooth; }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   perspective: 1200px;
 }
 
@@ -160,16 +166,20 @@ ul { list-style: none; }
 .hero {
   position: relative;
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  contain: paint;
   transform-style: preserve-3d;
 }
 
 .hero__scene {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+  contain: paint;
   transform-style: preserve-3d;
 }
 
