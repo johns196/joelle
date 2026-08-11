@@ -68,6 +68,46 @@ const tiltPhoto = document.getElementById('tiltPhoto');
 if (tiltPhoto) addTilt(tiltPhoto, 12);
 document.querySelectorAll('.p-card').forEach(card => addTilt(card, 6));
 
+/* Gyroscope-based tilt for touch devices — there's no mouse to drive
+   the parallax/tilt above, so on phones/tablets we use the device's
+   orientation sensor instead: tilting the phone moves the hero
+   background layers and the photo frame in real 3D. */
+function initGyroTilt() {
+  if (!window.matchMedia('(hover: none)').matches) return;
+  if (typeof DeviceOrientationEvent === 'undefined') return;
+
+  function handleOrientation(e) {
+    if (e.gamma === null || e.beta === null) return;
+    document.body.classList.add('gyro-active');
+    const x = Math.max(-1, Math.min(1, e.gamma / 45));
+    const y = Math.max(-1, Math.min(1, (e.beta - 40) / 45));
+    layers.forEach(layer => {
+      const depth = parseFloat(layer.dataset.depth);
+      layer.style.transform = `translate3d(${x * depth * 60}px, ${y * depth * 60}px, 0)`;
+    });
+    if (tiltPhoto) {
+      tiltPhoto.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+    }
+  }
+
+  function start() {
+    window.addEventListener('deviceorientation', handleOrientation);
+  }
+
+  if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+    const enableOnce = () => {
+      DeviceOrientationEvent.requestPermission().then(state => {
+        if (state === 'granted') start();
+      }).catch(() => {});
+      window.removeEventListener('touchend', enableOnce);
+    };
+    window.addEventListener('touchend', enableOnce, { once: true });
+  } else {
+    start();
+  }
+}
+initGyroTilt();
+
 /* Typewriter effect for role line */
 const roles = [
   'Hotel Management Professional',
