@@ -43,22 +43,27 @@ Placeholder Text]` directly inside `index.html`. Open it and search for
 |---|---|
 | Hero tagline | The `<em>[Replace with Joelle's own tagline]</em>` line |
 | About | Bio paragraph, City/Country, Education, Languages, Email |
-| About photo | Swap `assets/img/profile-placeholder.svg` for a real photo (see below) |
+| About photo | `assets/img/joelle-profile.jpg` is already set — swap it for a different photo any time (see below) |
 | Experience | Job titles, hotel/publication names, dates, descriptions (two tabs: Hotel Management / Journalism) |
 | Portfolio | Replace the 3 sample cards with real articles/projects and links |
 | Contact | Real email, phone, LinkedIn, Instagram links |
 | Download CV button | Add a PDF at `assets/cv/Joelle-Mahfouz-CV.pdf` (see `assets/cv/PUT_CV_HERE.txt`) |
 
-### Adding a real photo
+### Swapping the photo
 
-Replace `assets/img/profile-placeholder.svg` with a real image file
-(e.g. `profile.jpg`), then update the `src` in `index.html`:
+`assets/img/joelle-profile.jpg` is the current About-section photo
+(a cropped portrait — cropped so only Joelle appears, since the
+original photo also included a family member). To use a different
+photo, add the new image file under `assets/img/` and update the
+`src` in `index.html`:
 
 ```html
-<img src="assets/img/profile.jpg" alt="Joelle Mahfouz portrait" id="profileImg" />
+<img src="assets/img/your-new-photo.jpg" alt="Joelle Mahfouz portrait" id="profileImg" />
 ```
 
-A square/portrait photo (at least 800×1000px) works best.
+A portrait-oriented photo (roughly 4:5 ratio, at least 800×1000px)
+works best. If a photo includes other people, crop it to just Joelle
+before adding it here, especially if anyone in it is a minor.
 
 ## 📁 Project structure
 
