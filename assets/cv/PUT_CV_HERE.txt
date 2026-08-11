@@ -1,0 +1,8 @@
+Add Joelle's real CV/resume PDF to this folder, named:
+
+  Joelle-Mahfouz-CV.pdf
+
+The "Download CV" button on the site already links to that exact path
+(assets/cv/Joelle-Mahfouz-CV.pdf), so once the file is added and pushed
+to GitHub, the button works automatically. Delete this text file once
+the real CV is added.

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Joelle Mahfouz — Hospitality & Journalism Portfolio</title>
+<meta name="description" content="Portfolio of Joelle Mahfouz — hospitality management professional and journalist." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav__logo">JM<span>.</span></a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact" class="nav__cta">Contact</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero__scene" id="heroScene">
+    <div class="hero__layer" data-depth="0.1"><div class="orb orb--1"></div></div>
+    <div class="hero__layer" data-depth="0.25"><div class="orb orb--2"></div></div>
+    <div class="hero__layer" data-depth="0.4"><div class="orb orb--3"></div></div>
+    <div class="hero__grid"></div>
+  </div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow reveal">Portfolio</p>
+    <h1 class="hero__name reveal" style="--d:1">Joelle <span>Mahfouz</span></h1>
+    <p class="hero__role reveal" style="--d:2">
+      <span class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
+    </p>
+    <p class="hero__tagline reveal" style="--d:3">
+      Hospitality professional and journalist blending precise guest-experience
+      management with the storyteller's eye for detail. <em>[Replace with Joelle's own tagline]</em>
+    </p>
+    <div class="hero__actions reveal" style="--d:4">
+      <a href="#contact" class="btn btn--primary">Get in touch</a>
+      <a href="assets/cv/Joelle-Mahfouz-CV.pdf" class="btn btn--ghost" id="cvLink" download>Download CV</a>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">
+    <span></span>
+  </a>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="section__head reveal-up">
+    <p class="section__eyebrow">01 — About</p>
+    <h2>The person behind the two careers</h2>
+  </div>
+
+  <div class="about__grid">
+    <div class="about__photo reveal-up">
+      <div class="photo-frame" id="tiltPhoto">
+        <img src="assets/img/profile-placeholder.svg" alt="Joelle Mahfouz portrait placeholder" id="profileImg" />
+      </div>
+      <div class="about__stats">
+        <div class="stat">
+          <span class="stat__num" data-count="7">0</span><span class="stat__suffix">+</span>
+          <p>Years experience</p>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="2">0</span>
+          <p>Career paths mastered</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about__text reveal-up">
+      <p class="lead">
+        [PLACEHOLDER BIO — replace with Joelle's real bio.] Joelle Mahfouz is a
+        hospitality management professional and journalist based in
+        <strong>[City, Country]</strong>. She has worked across front-of-house
+        and operations roles in hotel management, and as a writer/reporter
+        covering <strong>[beat / publications]</strong>.
+      </p>
+      <p>
+        Her dual background gives her a rare mix: the operational discipline
+        and guest-first mindset of hospitality, paired with the curiosity,
+        research skills and storytelling craft of journalism. She thrives in
+        fast-paced, people-facing environments and communicates with warmth
+        and precision — on the page and in person.
+      </p>
+
+      <ul class="facts">
+        <li><span>📍</span> <strong>Location:</strong> [City, Country]</li>
+        <li><span>🎓</span> <strong>Education:</strong> [Degree, University]</li>
+        <li><span>🗣️</span> <strong>Languages:</strong> [Arabic, English, French…]</li>
+        <li><span>✉️</span> <strong>Email:</strong> <a href="mailto:joelle@example.com">joelle@example.com</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section experience" id="experience">
+  <div class="section__head reveal-up">
+    <p class="section__eyebrow">02 — Experience</p>
+    <h2>A career across two worlds</h2>
+  </div>
+
+  <div class="timeline-tabs reveal-up">
+    <button class="tab-btn active" data-tab="hotel">🏨 Hotel Management</button>
+    <button class="tab-btn" data-tab="journalism">📰 Journalism</button>
+  </div>
+
+  <div class="timeline" id="timeline-hotel">
+    <div class="tl-item reveal-up">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-date">[Year] — Present</span>
+        <h3>[Job Title]</h3>
+        <p class="tl-org">[Hotel / Property name], [City]</p>
+        <p>[Describe responsibilities — guest relations, front office operations, team leadership, revenue/occupancy improvements, VIP handling, etc.]</p>
+      </div>
+    </div>
+    <div class="tl-item reveal-up">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-date">[Year] — [Year]</span>
+        <h3>[Job Title]</h3>
+        <p class="tl-org">[Hotel / Property name], [City]</p>
+        <p>[Describe responsibilities and achievements.]</p>
+      </div>
+    </div>
+    <div class="tl-item reveal-up">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-date">[Year] — [Year]</span>
+        <h3>[Job Title]</h3>
+        <p class="tl-org">[Hotel / Property name], [City]</p>
+        <p>[Describe responsibilities and achievements.]</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline" id="timeline-journalism" hidden>
+    <div class="tl-item reveal-up">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-date">[Year] — Present</span>
+        <h3>[Job Title, e.g. Reporter / Editor]</h3>
+        <p class="tl-org">[Publication name]</p>
+        <p>[Describe beat, notable stories, sections covered.]</p>
+      </div>
+    </div>
+    <div class="tl-item reveal-up">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-date">[Year] — [Year]</span>
+        <h3>[Job Title]</h3>
+        <p class="tl-org">[Publication name]</p>
+        <p>[Describe responsibilities and achievements.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section skills" id="skills">
+  <div class="section__head reveal-up">
+    <p class="section__eyebrow">03 — Skills</p>
+    <h2>What she brings to the table</h2>
+  </div>
+
+  <div class="skills__grid">
+    <div class="skill-card reveal-up">
+      <h3>🏨 Hospitality</h3>
+      <div class="skill-bar"><span data-w="90"></span><label>Guest Relations</label></div>
+      <div class="skill-bar"><span data-w="85"></span><label>Front Office Operations</label></div>
+      <div class="skill-bar"><span data-w="80"></span><label>Team Leadership</label></div>
+      <div class="skill-bar"><span data-w="75"></span><label>Revenue & Booking Systems</label></div>
+    </div>
+    <div class="skill-card reveal-up">
+      <h3>📰 Journalism</h3>
+      <div class="skill-bar"><span data-w="90"></span><label>Reporting & Interviewing</label></div>
+      <div class="skill-bar"><span data-w="85"></span><label>Writing & Editing</label></div>
+      <div class="skill-bar"><span data-w="80"></span><label>Research & Fact-checking</label></div>
+      <div class="skill-bar"><span data-w="70"></span><label>Multimedia Storytelling</label></div>
+    </div>
+    <div class="skill-card reveal-up">
+      <h3>✨ Core Strengths</h3>
+      <div class="tag-cloud">
+        <span>Communication</span><span>Multilingual</span><span>Attention to Detail</span>
+        <span>Problem Solving</span><span>Adaptability</span><span>Client Relations</span>
+        <span>Deadline-driven</span><span>Cultural Awareness</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section portfolio" id="portfolio">
+  <div class="section__head reveal-up">
+    <p class="section__eyebrow">04 — Portfolio</p>
+    <h2>Selected work</h2>
+  </div>
+
+  <div class="portfolio__grid">
+    <article class="p-card reveal-up">
+      <div class="p-card__glow"></div>
+      <span class="p-card__tag">Article</span>
+      <h3>[Article title]</h3>
+      <p>[Short description or excerpt of the piece.]</p>
+      <a href="#" class="p-card__link">Read more →</a>
+    </article>
+    <article class="p-card reveal-up">
+      <div class="p-card__glow"></div>
+      <span class="p-card__tag">Project</span>
+      <h3>[Hotel initiative / project title]</h3>
+      <p>[Short description of a hospitality project or achievement.]</p>
+      <a href="#" class="p-card__link">Read more →</a>
+    </article>
+    <article class="p-card reveal-up">
+      <div class="p-card__glow"></div>
+      <span class="p-card__tag">Article</span>
+      <h3>[Article title]</h3>
+      <p>[Short description or excerpt of the piece.]</p>
+      <a href="#" class="p-card__link">Read more →</a>
+    </article>
+  </div>
+  <p class="portfolio__note reveal-up">💡 Replace these cards with Joelle's real articles / projects — see README.md for instructions.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="contact__box reveal-up">
+    <p class="section__eyebrow">05 — Contact</p>
+    <h2>Let's work together</h2>
+    <p class="contact__sub">Open to opportunities in hospitality management, journalism, and content roles.</p>
+
+    <div class="contact__grid">
+      <a class="contact__item" href="mailto:joelle@example.com">
+        <span>✉️</span> joelle@example.com
+      </a>
+      <a class="contact__item" href="tel:+00000000000">
+        <span>📞</span> +00 000 000 000
+      </a>
+      <a class="contact__item" href="https://www.linkedin.com/in/joellemahfouz/" target="_blank" rel="noopener">
+        <span>💼</span> LinkedIn
+      </a>
+      <a class="contact__item" href="https://www.instagram.com/joellemahfouz/" target="_blank" rel="noopener">
+        <span>📷</span> Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Joelle Mahfouz. Built with ♥ by her brother.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
