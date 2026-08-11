@@ -42,7 +42,15 @@
 
   <div class="hero__content">
     <p class="hero__eyebrow reveal">Portfolio</p>
-    <h1 class="hero__name reveal" style="--d:1">Joelle <span>Mahfouz</span></h1>
+    <h1 class="hero__name reveal" style="--d:1"><span class="hero__name-rotor">Joelle <span class="hero__name-gradient">Mahfouz</span></span></h1>
+
+    <div class="badge3d reveal" style="--d:1.5" aria-hidden="true">
+      <div class="badge3d__inner">
+        <div class="badge3d__face badge3d__face--front">🏨</div>
+        <div class="badge3d__face badge3d__face--back">📰</div>
+      </div>
+    </div>
+
     <p class="hero__role reveal" style="--d:2">
       <span class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
     </p>
@@ -70,8 +78,10 @@
 
   <div class="about__grid">
     <div class="about__photo reveal-up">
-      <div class="photo-frame" id="tiltPhoto">
-        <img src="assets/img/joelle-profile.jpg" alt="Joelle Mahfouz portrait" id="profileImg" />
+      <div class="photo-stack">
+        <div class="photo-frame" id="tiltPhoto">
+          <img src="assets/img/joelle-profile.jpg" alt="Joelle Mahfouz portrait" id="profileImg" />
+        </div>
       </div>
       <div class="about__stats">
         <div class="stat">
@@ -185,17 +195,41 @@
   <div class="skills__grid">
     <div class="skill-card reveal-up tilt-in">
       <h3>🏨 Hospitality</h3>
-      <div class="skill-bar"><span data-w="90"></span><label>Guest Relations</label></div>
-      <div class="skill-bar"><span data-w="85"></span><label>Front Office Operations</label></div>
-      <div class="skill-bar"><span data-w="80"></span><label>Team Leadership</label></div>
-      <div class="skill-bar"><span data-w="75"></span><label>Revenue & Booking Systems</label></div>
+      <div class="skill-bar">
+        <label>Guest Relations</label>
+        <div class="skill-bar__track"><span data-w="90"></span></div>
+      </div>
+      <div class="skill-bar">
+        <label>Front Office Operations</label>
+        <div class="skill-bar__track"><span data-w="85"></span></div>
+      </div>
+      <div class="skill-bar">
+        <label>Team Leadership</label>
+        <div class="skill-bar__track"><span data-w="80"></span></div>
+      </div>
+      <div class="skill-bar">
+        <label>Revenue & Booking Systems</label>
+        <div class="skill-bar__track"><span data-w="75"></span></div>
+      </div>
     </div>
     <div class="skill-card reveal-up tilt-in">
       <h3>📰 Journalism</h3>
-      <div class="skill-bar"><span data-w="90"></span><label>Reporting & Interviewing</label></div>
-      <div class="skill-bar"><span data-w="85"></span><label>Writing & Editing</label></div>
-      <div class="skill-bar"><span data-w="80"></span><label>Research & Fact-checking</label></div>
-      <div class="skill-bar"><span data-w="70"></span><label>Multimedia Storytelling</label></div>
+      <div class="skill-bar">
+        <label>Reporting & Interviewing</label>
+        <div class="skill-bar__track"><span data-w="90"></span></div>
+      </div>
+      <div class="skill-bar">
+        <label>Writing & Editing</label>
+        <div class="skill-bar__track"><span data-w="85"></span></div>
+      </div>
+      <div class="skill-bar">
+        <label>Research & Fact-checking</label>
+        <div class="skill-bar__track"><span data-w="80"></span></div>
+      </div>
+      <div class="skill-bar">
+        <label>Multimedia Storytelling</label>
+        <div class="skill-bar__track"><span data-w="70"></span></div>
+      </div>
     </div>
     <div class="skill-card reveal-up tilt-in">
       <h3>✨ Core Strengths</h3>

@@ -173,7 +173,6 @@ const statObserver = new IntersectionObserver((entries) => {
 statEls.forEach(el => statObserver.observe(el));
 
 /* Skill bars fill on scroll */
-const skillBars = document.querySelectorAll('.skill-bar[data-w], .skill-bar > span[data-w]');
 document.querySelectorAll('.skill-bar').forEach(bar => {
   const span = bar.querySelector('span[data-w]');
   if (span) bar.style.setProperty('--target', span.dataset.w + '%');

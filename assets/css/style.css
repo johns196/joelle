@@ -261,7 +261,27 @@ ul { list-style: none; }
   line-height: 1.05;
   margin-bottom: 1.2rem;
 }
-.hero__name span {
+
+/* Extruded 3D block-letter title, gently rotating in its own 3D space
+   at all times — visible immediately, no hover/tilt/scroll needed */
+.hero__name-rotor {
+  display: inline-block;
+  text-shadow:
+    1px 1px 0 rgba(212, 175, 106, .55),
+    2px 2px 0 rgba(212, 175, 106, .45),
+    3px 3px 0 rgba(212, 175, 106, .35),
+    4px 4px 0 rgba(212, 175, 106, .25),
+    5px 5px 0 rgba(212, 175, 106, .15),
+    7px 7px 14px rgba(0, 0, 0, .5);
+  animation: nameFloat3d 8s ease-in-out infinite;
+}
+@keyframes nameFloat3d {
+  0%, 100% { transform: perspective(700px) rotateX(0deg) rotateY(0deg); }
+  25% { transform: perspective(700px) rotateX(6deg) rotateY(-5deg); }
+  75% { transform: perspective(700px) rotateX(-6deg) rotateY(5deg); }
+}
+
+.hero__name-gradient {
   background: linear-gradient(120deg, var(--accent), var(--accent-3), var(--accent-2), var(--accent));
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -329,6 +349,41 @@ ul { list-style: none; }
   color: var(--text);
 }
 .btn--ghost:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+/* Spinning 3D coin badge — flips between her two careers continuously,
+   a literal 3D object (two faces + backface-visibility) so it reads
+   as "3D" instantly, on every device, with zero interaction required */
+.badge3d {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 1.8rem;
+  perspective: 700px;
+}
+.badge3d__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: coinFlip 4.5s linear infinite;
+}
+@keyframes coinFlip {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+.badge3d__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .45);
+  backface-visibility: hidden;
+}
+.badge3d__face--back { transform: rotateY(180deg); }
 
 .scroll-cue {
   position: absolute;
@@ -405,8 +460,34 @@ ul { list-style: none; }
 
 .about__photo { perspective: 1000px; }
 
+/* Stacked-card depth cue behind the photo — always visible, no
+   interaction needed, reads as 3D layering at a glance. Scoped to its
+   own wrapper (not .about__photo) so it doesn't bleed into the stats
+   row below the photo. */
+.photo-stack { position: relative; }
+.photo-stack::before,
+.photo-stack::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.photo-stack::before {
+  background: var(--surface-2);
+  transform: translate(14px, 16px) rotate(-3deg);
+  z-index: 0;
+}
+.photo-stack::after {
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+  opacity: .55;
+  transform: translate(28px, 32px) rotate(-6deg);
+  z-index: -1;
+}
+
 .photo-frame {
   position: relative;
+  z-index: 1;
   border-radius: var(--radius);
   overflow: hidden;
   aspect-ratio: 4/5;
@@ -432,7 +513,7 @@ ul { list-style: none; }
    transform directly instead of fighting the idle keyframe loop */
 body.gyro-active .photo-frame { animation: none; }
 
-.about__stats { display: flex; gap: 2rem; margin-top: 1.6rem; }
+.about__stats { display: flex; gap: 2rem; margin-top: 2.6rem; }
 .stat { text-align: center; }
 .stat__num, .stat__suffix {
   font-family: var(--font-display);
@@ -529,14 +610,14 @@ body.gyro-active .photo-frame { animation: none; }
 .skill-card h3 { font-family: var(--font-display); margin-bottom: 1.4rem; font-size: 1.2rem; }
 
 .skill-bar { margin-bottom: 1.1rem; }
-.skill-bar label { display: block; font-size: .82rem; color: var(--text-dim); margin-top: .4rem; }
-.skill-bar {
+.skill-bar label { display: block; font-size: .82rem; color: var(--text-dim); margin-bottom: .5rem; }
+.skill-bar__track {
   position: relative;
   background: var(--surface-2);
   border-radius: 999px;
   height: 6px;
 }
-.skill-bar span {
+.skill-bar__track span {
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 0;
@@ -544,7 +625,7 @@ body.gyro-active .photo-frame { animation: none; }
   background: linear-gradient(90deg, var(--accent), var(--accent-3));
   transition: width 1.2s var(--ease);
 }
-.skill-bar.in span { width: var(--target, 0%); }
+.skill-bar.in .skill-bar__track span { width: var(--target, 0%); }
 
 .tag-cloud { display: flex; flex-wrap: wrap; gap: .6rem; }
 .tag-cloud span {
